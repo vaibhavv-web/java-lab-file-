@@ -1,0 +1,35 @@
+class Demo{ 
+
+    public static void main(String[] args) { 
+
+        int arr[] = {10, 30, 20, 50, 40}; 
+
+  
+
+        int largest = arr[0], second = -1; 
+
+  
+
+        for (int x : arr) { 
+
+            if (x > largest) { 
+
+                second = largest; 
+
+                largest = x; 
+
+            } else if (x > second && x != largest) 
+
+                second = x; 
+
+        } 
+
+  
+
+        System.out.println("Second Largest = " + second); 
+
+    } 
+
+} 
+
+ 
