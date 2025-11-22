@@ -1,0 +1,63 @@
+import java.io.*; 
+
+import javax.servlet.*; 
+
+import javax.servlet.http.*; 
+
+  
+
+public class VisitCounter extends HttpServlet { 
+
+    public void doGet(HttpServletRequest req, HttpServletResponse res) 
+
+        throws IOException { 
+
+         
+
+        res.setContentType("text/html"); 
+
+        PrintWriter out = res.getWriter(); 
+
+         
+
+        // FIX: Missing semicolon here 
+
+        Cookie[] ck = req.getCookies();  
+
+         
+
+        int count = 1; 
+
+         
+
+        if (ck != null) { 
+
+            for (Cookie c : ck) { 
+
+                if (c.getName().equals("visits")) { 
+
+                    count = Integer.parseInt(c.getValue()) + 1; 
+
+                } 
+
+            } 
+
+        } 
+
+         
+
+        // FIX: The following lines were misplaced and outside the doGet body. 
+
+        // They must be inside the method. 
+
+        Cookie c = new Cookie("visits", String.valueOf(count)); 
+
+        res.addCookie(c); 
+
+        out.println("You have visited this website " + count + " times."); 
+
+    } 
+
+} 
+
+ 
