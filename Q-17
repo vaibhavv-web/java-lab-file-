@@ -1,0 +1,25 @@
+<table Display="1"> 
+
+    <tr> 
+
+        <th rowspan="2">Name</th> 
+
+        <th colspan="2">Marks</th> 
+
+    </tr> 
+
+    <tr> 
+
+        <td>Math</td> 
+
+        <td>CS</td> 
+
+    </tr> 
+
+    <tr> 
+
+        <td>Vaibhav</td><td>90</td><td>88</td> 
+
+    </tr> 
+
+</table> 
