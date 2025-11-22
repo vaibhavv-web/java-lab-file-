@@ -1,0 +1,53 @@
+import java.awt.*; 
+
+import java.awt.event.*; 
+
+  
+
+class Background extends Frame implements ActionListener { 
+
+    Button b; 
+
+  
+
+    Background() { 
+
+  
+
+        b = new Button("Change Color"); 
+
+  
+
+        add(b); 
+
+        b.addActionListener(this); 
+
+        setSize(300,300); 
+
+        setLayout(new FlowLayout()); 
+
+        setVisible(true); 
+
+    } 
+
+  
+
+    public void actionPerformed(ActionEvent e) { 
+
+        setBackground(Color.yellow); 
+
+    } 
+
+  
+
+    public static void main(String[] args) { 
+
+        new Background(); 
+
+    } 
+
+} 
+
+                                        
+
+ 
