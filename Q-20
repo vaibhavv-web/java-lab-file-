@@ -1,0 +1,9 @@
+<% 
+
+String name = request.getParameter("name"); 
+
+String age = request.getParameter("age"); 
+
+%>Hello <%= name %>! 
+
+Your age is <%= age %>. 
