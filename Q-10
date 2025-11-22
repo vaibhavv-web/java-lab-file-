@@ -1,0 +1,39 @@
+import java.awt.*; 
+
+  
+
+class tenthquestion { 
+
+    public static void main(String[] args) { 
+
+        Frame f = new Frame(); 
+
+        f.setLayout(new BorderLayout()); 
+
+  
+
+        f.add("North", new Button("North")); 
+
+        f.add("South", new Button("South")); 
+
+  
+
+        Panel p = new Panel(); 
+
+        p.setLayout(new FlowLayout()); 
+
+        p.add(new Button("1")); 
+
+        p.add(new Button("2")); 
+
+        f.add("Center", p); 
+
+  
+
+        f.setSize(300,300); 
+
+        f.setVisible(true); 
+
+    } 
+
+} 
