@@ -1,0 +1,37 @@
+class Factorial { 
+
+    static int rec(int n) { 
+
+        if (n == 1) return 1; 
+
+        return n * rec(n - 1); 
+
+    } 
+
+  
+
+    static int iter(int n) { 
+
+        int f = 1; 
+
+        for (int i = 1; i <= n; i++) 
+
+            f *= i; 
+
+        return f; 
+
+    } 
+
+  
+
+    public static void main(String[] args) { 
+
+        int n = 5; 
+
+        System.out.println("Recursive: " + rec(n)); 
+
+        System.out.println("Iterative: " + iter(n)); 
+
+    } 
+
+} 
