@@ -1,0 +1,77 @@
+HTML code  
+
+<!DOCTYPE html> 
+
+<html> 
+
+<head> 
+
+    <title>User Data Form</title> 
+
+</head> 
+
+<body> 
+
+    <form action="MyServlet" method="post"> 
+
+        Name: <input type="text" name="name"><br><br> 
+
+        Age: <input type="text" name="age"><br><br> 
+
+        <input type="submit" value="Submit"> 
+
+    </form> 
+
+</body> 
+
+</html> 
+
+ 
+
+Servlet code : 
+
+import java.io.*; 
+
+import javax.servlet.*; 
+
+import javax.servlet.http.*; 
+
+  
+
+public class MyServlet extends HttpServlet { 
+
+    public void doPost(HttpServletRequest req, HttpServletResponse res) 
+
+        throws IOException { 
+
+         
+
+        res.setContentType("text/html"); 
+
+         
+
+        // Corrected: Added closing parenthesis and semicolon 
+
+        PrintWriter out = res.getWriter();  
+
+         
+
+        String name = req.getParameter("name"); 
+
+        String age = req.getParameter("age"); 
+
+         
+
+        out.println("<html><body>"); 
+
+        out.println("<h2>Submitted Data</h2>"); 
+
+        out.println("Name: <b>" + name + "</b><br>"); 
+
+        out.println("Age: <b>" + age + "</b>"); 
+
+        out.println("</body></html>"); 
+
+    } 
+
+} 
