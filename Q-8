@@ -1,0 +1,59 @@
+import java.applet.Applet; 
+
+import java.awt.*; 
+
+import java.awt.event.*; 
+
+public class SumApplet extends Applet implements ActionListener { 
+
+TextField t1, t2, result; 
+
+Button add; 
+
+public void init() { 
+
+t1 = new TextField(10); 
+
+t2 = new TextField(10); 
+
+result = new TextField(10); 
+
+result.setEditable(false); 
+
+add = new Button("Add"); 
+
+add.addActionListener(this); 
+
+add(new Label("Enter First Number:")); 
+
+add(t1); 
+
+add(new Label("Enter Second Number:")); 
+
+add(t2); 
+
+add(add); 
+
+add(new Label("Sum:")); 
+
+add(result); 
+
+} 
+
+public void actionPerformed(ActionEvent e) { 
+
+int a = Integer.parseInt(t1.getText()); 
+
+int b = Integer.parseInt(t2.getText()); 
+
+  
+
+  
+
+int s = a + b; 
+
+result.setText(""+ s); 
+
+} 
+
+}  
