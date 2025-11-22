@@ -1,0 +1,63 @@
+ import java.sql.*; 
+
+  
+
+class RetrieveData { 
+
+    public static void main(String[] args) { 
+
+        try { 
+
+            // Opening brace for the try block was missing 
+
+            Class.forName("com.mysql.cj.jdbc.Driver"); 
+
+             
+
+            // Semicolon was missing at the end of the line 
+
+            Connection con = DriverManager.getConnection( 
+
+                "jdbc:mysql://localhost:3306/testdb", "root", "password"); 
+
+             
+
+            Statement st = con.createStatement(); 
+
+             
+
+            ResultSet rs = st.executeQuery("SELECT * FROM student"); 
+
+             
+
+            while (rs.next()) { 
+
+                // Added spaces for readable output 
+
+                System.out.println(rs.getInt(1) + " " + 
+
+                                   rs.getString(2) + " " + 
+
+                                   rs.getInt(3)); 
+
+            } 
+
+             
+
+            // Logical fix: Connection must be closed AFTER the loop finishes 
+
+            con.close(); 
+
+             
+
+        } catch (Exception e) { 
+
+            System.out.println(e); 
+
+        } 
+
+    } 
+
+} 
+
+ 
