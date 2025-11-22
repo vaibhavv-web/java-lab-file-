@@ -1,0 +1,61 @@
+import java.sql.Connection; 
+
+import java.sql.DriverManager; 
+
+import java.sql.Statement; 
+
+import java.sql.SQLException; 
+
+  
+
+class mysql { 
+
+    public static void main(String[] args) { 
+
+        try { 
+
+  
+
+            Class.forName("com.mysql.cj.jdbc.Driver"); 
+
+            String url = "jdbc:mysql://localhost:3306/testdb?useSSL=false&allowPublicKeyRetrieval=true"; 
+
+            String user = "root"; 
+
+            String password = ""; 
+
+  
+
+            Connection con = DriverManager.getConnection(url, user, password); 
+
+            Statement st = con.createStatement(); 
+
+  
+
+            int insert = st.executeUpdate("INSERT INTO student VALUES(1,'Ram',20)"); 
+
+            int update = st.executeUpdate("UPDATE student SET age=21 WHERE id=1"); 
+
+  
+
+            System.out.println("Record Inserted: " + insert); 
+
+            System.out.println("Record Updated: " + update); 
+
+  
+
+            con.close(); 
+
+        } catch (Exception e) { 
+
+            System.out.println(e); 
+
+        } 
+
+    } 
+
+} 
+
+ 
+
+                           
