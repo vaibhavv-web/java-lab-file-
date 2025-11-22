@@ -1,0 +1,53 @@
+import java.awt.*; 
+
+import java.awt.event.*; 
+
+  
+
+class TextChange extends Frame implements ActionListener { 
+
+    Label l; 
+
+    Button b; 
+
+  
+
+    TextChange() { 
+
+        l = new Label("Old Text"); 
+
+        b = new Button("Change"); 
+
+        add(l); add(b); 
+
+  
+
+        b.addActionListener(this); 
+
+  
+
+        setLayout(new FlowLayout()); 
+
+        setSize(300,300); 
+
+        setVisible(true); 
+
+    } 
+
+  
+
+    public void actionPerformed(ActionEvent e) { 
+
+        l.setText("Text Changed!"); 
+
+    } 
+
+  
+
+    public static void main(String[] args) { 
+
+        new TextChange(); 
+
+    } 
+
+} 
